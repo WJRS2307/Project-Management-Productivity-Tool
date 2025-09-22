@@ -1,0 +1,25 @@
+﻿.date {
+    position: absolute;
+    right: 3%;
+    top: 5%;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.card-body {
+    position: relative;
+}
+
+.item {
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.item::-webkit-scrollbar {
+    display: none;
+}
+
+h3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,90 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@section teamManagement{
+    <link rel="stylesheet" href="~/css/teammanagement.css" />
+}
+<div class="d-flex align-items-center">
+    <div class="d-block">
+        <h3>Team Management</h3>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-primary rounded d-block" data-bs-toggle="modal" data-bs-target="#myModal3">
+        <i class="fa-solid fa-plus"></i>
+        Invite Member
+    </button>
+</div>
+<div class="rounded box mt-3">
+    <div class="row fw-bold gx-0" id="headers">
+        <div class="col text-center pt-3 pb-3 row-1">
+            Members
+        </div>
+        <div class="col text-center pt-3 pb-3 row-2">
+            Email
+        </div>
+        <div class="col text-center pt-3 pb-3 row-3">
+            Roles
+        </div>
+        <div class="col text-center pt-3 pb-3 row-4">
+            Action
+        </div>
+    </div>
+
+    <form class="row gx-0">
+        <div class="col text-center pt-3 pb-3 row-1">
+            Admin
+        </div>
+        <div class="col text-center pt-3 pb-3 row-2">
+            adminSwiftX@gmail.com
+        </div>
+        <div class="col text-center pt-3 pb-3 row-3">
+            System Adminstrator
+        </div>
+        <div class="col text-center pt-3 pb-3 row-4">
+            <button class="ellipsis">
+                <img src="~/assets/icons/ellipsis-solid.svg" alt="">
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="myModal3">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Add New Company Member</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+                <div class="modal-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="mb-1 fw-bold">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                 <div><br />
+                     <p class="mb-1 fw-bold">Role</p>
+                     <div>
+                        <select class="form-select mw-100" aria-label="Default select example">
+                            <option selected></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                     </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary w-25 rounded" style="margin:0 auto;" data-bs-dismiss="modal">Invite</button>
+            </div>
+
+        </div>
+    </div>
+</div>

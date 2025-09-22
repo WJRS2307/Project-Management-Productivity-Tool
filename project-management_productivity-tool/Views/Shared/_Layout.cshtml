@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - project_management_productivity_tool</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    @*<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />*@
+    @*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />*@
+    @*<link rel="stylesheet" href="~/project_management_productivity_tool.styles.css" asp-append-version="true" />*@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/task-header.css"/>
+    <link rel="stylesheet" href="~/css/constants.css" />
+    <link rel="stylesheet" href="~/css/colors.css" />
+    <link rel="stylesheet" href="~/css/sidebar.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/lib/frappe-gantt/" />
+    <link rel="stylesheet" href="~/css/gantt.css" />
+
+    
+
+    <link rel="stylesheet" href="~/lib/chosen_v1.8.7/chosen.min.css" />
+
+    @if(IsSectionDefined("notifications"))
+    {
+        @RenderSection("notifications")
+    }
+
+    @if(IsSectionDefined("mySettings"))
+    {
+        @RenderSection("mySettings")
+    }
+
+    @if (IsSectionDefined("report"))
+    {
+        @RenderSection("report")
+    }
+
+    @if (IsSectionDefined("goal"))
+    {
+        @RenderSection("goal")
+    }
+
+    @if (IsSectionDefined("settingsNotifications"))
+    {
+        @RenderSection("settingsNotifications")
+    }
+
+    @if (IsSectionDefined("teamManagement"))
+    {
+        @RenderSection("teamManagement")
+    }
+
+    @if (IsSectionDefined("archived"))
+    {
+        @RenderSection("archived")
+    }
+    @if (IsSectionDefined("detail"))
+    {
+        @RenderSection("detail")
+    }
+</head>
+<body>
+   
+    @{
+
+        
+
+        var controllerName = string.Empty;
+        object controllerObj;
+        var actionName = string.Empty;
+        object actionObj;
+
+        if (ViewContext.RouteData.Values.TryGetValue("controller", out controllerObj))
+        {
+            controllerName = controllerObj.ToString();
+        }
+
+        if (ViewContext.RouteData.Values.TryGetValue("action", out actionObj))
+        {
+            actionName = actionObj.ToString();
+        }
+    }
+   
+   
+    <input type="checkbox" name="" id="sidebar-toggle" style="display: none;">
+        <div id="sidebar" class="flex-shrink-0 p-0 bg-primary" >
+
+            <label id="sidebar-toggle-label" for="sidebar-toggle">
+              <img src="~/assets/icons/arrow.svg">
+              <img src="~/assets/icons/arrow.svg">
+            </label>
+            <label id="collapsed-toggle-label" for="sidebar-toggle"></label>
+
+            <ul class="list-unstyled ps-0">
+              <li class="mb-1 sidebar-li" >
+                <a asp-controller="Home" asp-action="Index" class="btn align-items-center collapsed @(controllerName=="Home" ? "bg-highlight" : "")" style="width: 100%;">
+                    <span class="d-flex align-items-center gap-4">
+
+                        <img src="~/assets/icons/home.svg"> Home
+                    </span>
+
+                </a>
+
+              </li>
+              <li class="mb-1 sidebar-li">
+
+                <a asp-controller="Notification" asp-action="Index" class="d-flex align-items-center gap-4 btn align-items-center collapsed @(controllerName=="Notification" ? "bg-highlight" : "")">
+
+                        <img src="~/assets/icons/notifications.svg"> Notifications
+                    </a>
+              </li>
+              <li class="mb-1 sidebar-li">
+
+                <a asp-controller="Goals" asp-action="Index" class="d-flex align-items-center gap-4 btn align-items-center collapsed @(controllerName=="Goals" ? "bg-highlight" : "")">
+
+                        <img src="~/assets/icons/goals.svg"> Goals
+                    </a>
+              </li>
+              <li class="mb-1 sidebar-li">
+
+                <a asp-controller="Timesheet" asp-action="Index" class="d-flex align-items-center gap-4 btn align-items-center collapsed @(controllerName=="Timesheet" ? "bg-highlight" : "")">
+
+                        <img src="~/assets/icons/timesheet.svg"> Timesheet
+                    </a>
+              </li>
+              <li class="mb-1 sidebar-li">
+
+                <a asp-controller="Report" asp-action="Index" class="d-flex align-items-center gap-4 btn align-items-center collapsed @(controllerName=="Report" ? "bg-highlight" : "")">
+
+                        <img src="~/assets/icons/reports.svg"> Report
+                    </a>
+              </li>
+
+              <li class="mb-1 sidebar-li">
+                <button class="btn btn-toggle align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#favourites-collapse" aria-expanded="false">
+                    <span class="d-flex align-items-center gap-4">
+
+                        <img src="~/assets/icons/favourites.svg"> Favourites
+                    </span>
+                </button>
+                <div class="collapse" id="favourites-collapse" style="">
+                  <ul class="btn-toggle-nav list fw-normal pb-1 small favourites-list">
+
+                    <li><a href="#" class="link-dark">Development</a></li>
+                    <li><a href="#" class="link-dark">QA and Testing</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1 sidebar-li">
+                <button class="btn btn-toggle align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#workspaces-collapse" aria-expanded="false">
+                    <span class="d-flex align-items-center gap-4">
+
+                        <img src="~/assets/icons/workspaces.svg"> Workspaces
+                    </span>
+                </button>
+                <div class="collapse" id="workspaces-collapse" style="">
+                  <button class="btn btn-light rounded "  data-bs-toggle="modal" data-bs-target="#addWorkspaceModal" >+ New Workspace</button>
+                  <ul class="btn-toggle-nav list fw-normal pb-1 small ">
+                      <li><a asp-controller="Workspace" asp-action="Index" class="link-dark @(controllerName=="Workspace")" style="width: 100%;">Development</a></li>
+                      <li><a asp-controller="Workspace" asp-action="Index" class="link-dark @(controllerName=="Workspace")" style="width: 100%;">Finance</a></li>
+                      <li><a asp-controller="Workspace" asp-action="Index" class="link-dark @(controllerName=="Workspace")" style="width: 100%;">Marketing</a></li>
+                      <li><a asp-controller="Workspace" asp-action="Index" class="link-dark @(controllerName=="Workspace")" style="width: 100%;">QA and Testing</a></li>
+                  </ul>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+
+
+        <main>
+            <header>
+                <div class="d-flex gap-3 align-items-center">
+                  <div class="home-icon">
+                      
+                      @switch(controllerName){
+                          case "Home":
+                            <img src="~/assets/icons/home.svg" alt="">
+                            break;
+
+                          case "Notification":
+                            <img src="~/assets/icons/notifications.svg" alt="">
+                            break;
+
+                        case "Goals":
+                            <img src="~/assets/icons/goals.svg" alt="">
+                            break;
+
+                        case "Timesheet":
+                            <img src="~/assets/icons/timesheet.svg" alt="">
+                            break;
+
+                        case "Report":
+                            <img src="~/assets/icons/reports.svg" alt="">
+                            break;
+
+                        case "Settings":
+                            <img src="~/assets/icons/reports.svg" alt="">
+                            break;
+
+                    }
+                  </div>
+                <h2>@ViewData["Title"]</h2>
+                </div>
+                <div class="icon">{u}</div>
+            </header>
+
+            <div id="content">
+
+
+
+            <div class="modal fade" id="addWorkspaceModal" tabindex="-1" aria-labelledby="addWorkspaceModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-body p-4">
+                            <h5 class="modal-title mb-3" id="addWorkspaceModalLabel">Create New Workspace</h5>
+                            <form action="" method="post">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Workspace Name</label>
+                                    <input class="form-control" type="text" name="workspaceName">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Share With</label>
+                                    <input class="form-control" type="text" name="shareWith">
+
+                                </div>
+                                <div class="mb-3" id="statusInputGroup">
+                                    <p class="form-label">Active Statuses</p>
+                                    <div class="active-statuses">
+                                        <div class="status mb-2 p-1 d-flex gap-2 border border-2 border-primary align-items-center rounded-3">
+                                            <div class="marker"></div>
+                                            <p class="m-0">To Do</p>
+                                        </div>
+                                        <div class="status mb-2 p-1 d-flex gap-2 border border-2 border-primary align-items-center rounded-3">
+                                            <div class="marker" style="background-color: #FD7A7A;"></div>
+                                            <p class="m-0">Pending</p>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary rounded-3 mb-3">+ Add Status</button>
+                                    <p class="form-label">Closed Status</p>
+                                    <div class="status mb-2 p-1 d-flex gap-2 border border-2 border-primary align-items-center rounded-3">
+                                        <div class="marker" style="background-color: #4BBC5D;"></div>
+                                        <p class="m-0">Completed</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary d-block mx-auto px-5">Create</button>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+                
+              <!-- Main content -->
+
+              <!-- Remove card divs and add your content here -->
+            @RenderBody()
+
+              <!-- Main content end -->
+
+
+
+
+            </div>
+
+            <footer>
+              <div class="logo-container">
+                <img src="~/assets/icons/logo.svg" alt="">
+
+              </div>
+            </footer>
+        </main>
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/chosen_v1.8.7/chosen.jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="dist/frappe-gantt.js"></script>
+    <script src="~/js/board.js"></script>
+    <script src="~/js/dragula.js"></script>
+    <script src="~/js/dragula.min.js"></script>
+    <script scr="~/js/jquery-3.6.1.min.js"></script>
+
+    
+    @await RenderSectionAsync("Scripts", required: false)
+
+    
+
+
+
+</body>
+<script src="https://kit.fontawesome.com/98b3085a26.js" crossorigin="anonymous"></script>
+</html>

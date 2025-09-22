@@ -1,0 +1,79 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "";
+    ViewData["Title"] = "Sign Up";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/constants.css">
+    <link rel="stylesheet" href="~/css/colors.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/signup.css">
+</head>
+<body>
+    <div class="row inner-body" style="width:100%;">
+        <div class="col-sm frame">
+            <img src="~/assets/img/signUpImage.svg">
+        </div>
+        <div class="col-sm  p-5 d-flex flex-column justify-content-between">
+            <img width="100" src="~/assets/icons/logo.svg">
+            <h1>Sign Up</h1>
+            <form action="">
+                <div class="container first-row-items">
+                    <div class="row">
+                        <div class="col">
+                            <div class="first-name">
+                                <label class='label-first-name'>First Name</label>
+                                <input type="text" class="form-control" id="first-name" placeholder="First name">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="last-name">
+                                <label class='label-last-name'>Last Name</label>
+                                <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group label-group mt-3">
+                    <div class="label-style">
+                        <label class='email'>Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group label-group mt-3">
+                    <div class="label-style">
+                        <label class='password'>Password</label>
+                        <div class="password-container">
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <i class="far fa-eye" id="togglePassword" style="color:var(--primary-color)"></i>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary rounded submit-button mt-3">Sign Up</button>
+            </form>
+            <div class="strike mt-4 mb-4">
+                <span>OR</span>
+            </div>
+            <form action="">
+                <button type="submit" class="btn btn-light btn-outline-primary rounded submit-button login-google">
+                    <span>Continue with google</span>
+                </button>
+            </form>
+            <div class="sign-up text-center mt-3">
+                Don’t have a SwiftX account? &nbsp; <a href="">Login Now</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

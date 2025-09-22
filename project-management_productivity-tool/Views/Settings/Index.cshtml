@@ -1,0 +1,115 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Settings";
+
+}
+@section mySettings{
+    <link href="~/css/mysettings.css" rel="stylesheet" />
+}
+<h3>My Settings</h3>
+<form class="row mt-3 rounded" style="border:1px solid #D9D9D9;">
+    <div class="col-6 col-sm-8" style="border-bottom:1px solid #D9D9D9;">
+        <div class="m-4" style="margin:0 auto">
+            <div class="row">
+                <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" class="form-control mt-1" id="first-name" placeholder="First Name">
+                    </div>
+                </div>
+
+                <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" class="form-control mt-1" id="last-name" placeholder="Last name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mt-4">
+                <label for="email">Email</label>
+                <input type="email" class="form-control mt-1" id="email" placeholder="Enter Email">
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="old-password">Old Password</label>
+                        <input type="password" class="form-control mt-1" id="old-password" placeholder="Enter Old Password">
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" class="form-control mt-1" id="new-password" placeholder="Enter New Password">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-sm-4">
+        <div class="profile-pic"></div>
+        <div class="text-center mt-3 profile-link"><a href="">Change Icon Color</a></div>
+        <div class="text-center mt-3 profile-link"><a href="">Upload Image</a></div>
+    </div>
+
+    <div class="w-100 d-none d-md-block"></div>
+
+    <div class="col-6 col-sm-8">
+        <div class="row m-3">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <label for="">Timezone</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="">Time format</label><br>
+                        <div class="d-inline-block">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                12 Hours
+                            </label>
+                        </div>
+                        <div class="d-inline-block" style="margin-left: 4rem;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                24 hours
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-100 d-none d-md-block"></div>
+
+            <div class="col mt-3">
+                <div class="d-block">
+                    <label for="">Date Format</label>
+                </div>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" style="margin-right: 2rem;" for="flexCheckDefault">
+                    dd/MM/YYYY
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" style="margin-right: 2rem;" for="flexCheckDefault">
+                    MM/dd/YYYY
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" style="margin-right: 2rem;" for="flexCheckDefault">
+                    YYYY/MM/dd
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-sm-4 position-relative">
+        <button type="button" class="btn btn-primary save-button w-50 rounded">Save</button>
+    </div>
+</form>

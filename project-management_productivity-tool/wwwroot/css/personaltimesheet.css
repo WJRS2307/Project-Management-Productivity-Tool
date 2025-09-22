@@ -1,0 +1,162 @@
+﻿.fontweight600 {
+    font-weight: 600;
+}
+
+.fontsize12 {
+    font-size: 12px;
+}
+
+.fontsize13 {
+    font-size: 13px;
+}
+
+.fontsize17 {
+    font-size: 17px;
+}
+
+#addtimesheetbtn {
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    border-radius: 3px;
+    color: var(--primary-color);
+    width: 20px;
+    height: 20px;
+    margin-left: 2%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#filterbtn {
+    background-color: transparent;
+    border: none;
+    font-size: 11px;
+    color: #ADADAD;
+    margin-bottom: 2%;
+}
+
+.col {
+    border: 1px solid black;
+}
+
+.container {
+    border: 1px solid var(--grey-color);
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: minmax(40px, 4fr) minmax(140px, 14fr) minmax(110px, 11fr) minmax(110px, 11fr) minmax(90px, 9fr) minmax(160px, 16fr);
+    border: 1px solid var(--grey-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.g-col {
+    border-right: 1px solid var(--grey-color);
+    border-bottom: 1px solid var(--grey-color);
+    padding: max(10px, 5%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: max(55px);
+}
+
+.grid div.g-col.gridheader {
+    font-size: 13px;
+    font-weight: 600;
+    background-color: white;
+}
+
+.grid .g-col:nth-child(12n+1),
+.grid .g-col:nth-child(12n+2),
+.grid .g-col:nth-child(12n+3),
+.grid .g-col:nth-child(12n+4),
+.grid .g-col:nth-child(12n+5),
+.grid .g-col:nth-child(12n+6) {
+    background-color: #F1F7FF;
+}
+/*bottom*/
+.grid .g-col:nth-last-child(-n+6) {
+    border-bottom: none;
+}
+
+/*right, Remarks Column*/
+.grid .g-col:nth-child(6n) {
+    border-right: none;
+}
+
+.fontstyle1 {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.fontstyle2 {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.taskheader {
+    align-self: start;
+    margin-left: 10%;
+    text-align: left;
+}
+
+.taskdetails {
+    align-self: start;
+    margin-left: 20%;
+    text-align: left;
+}
+
+.modalclosebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: var(--grey-color);
+    font-size: 15px;
+}
+
+.modal-content {
+    border-color: var(--grey-color);
+}
+
+div.modal-body {
+    padding: max(1.5rem,10px) max(3rem,20px);
+}
+
+form {
+    display: grid;
+    grid-template-columns: minmax(30px, 3fr) minmax(70px, 7fr);
+    gap: max(10px,1%);
+    width: stretch;
+}
+
+    form > label {
+        color: #949494;
+        font-size: 14px;
+    }
+
+    form > select.form-select,
+    form > input.form-control,
+    form > textarea.control {
+        padding: 0.1875rem 0.75rem;
+        border-radius: 7px;
+    }
+
+    form > textarea {
+        height: max(40px,6rem);
+        resize: none;
+    }
+
+.dateinput {
+    background: url(../assets/icons/calendar.svg) no-repeat 95% 50%;
+}
+
+#modalsavebtn {
+    padding-right: 3.75rem !important;
+    padding-left: 3.75rem !important;
+}

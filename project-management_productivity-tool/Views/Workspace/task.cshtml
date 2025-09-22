@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/constants.css">
+
+    <link rel="stylesheet" href="~/css/colors.css">
+
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/sidebar.css">
+    <link rel="stylesheet" href="~/css/task-details.css">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".modal-dialog").css("width", "1000%");
+        });
+    </script>
+</head>
+<body>
+
+    <input type="checkbox" name="" id="sidebar-toggle" style="display: none;">
+    <div id="sidebar" class="flex-shrink-0 p-0 bg-primary">
+
+        <label id="sidebar-toggle-label" for="sidebar-toggle">
+            <img src="./assets/icons/arrow.svg">
+            <img src="./assets/icons/arrow.svg">
+        </label>
+        <label id="collapsed-toggle-label" for="sidebar-toggle"></label>
+
+        <ul class="list-unstyled ps-0">
+            <li class="mb-1 sidebar-li">
+                <button class="btn align-items-center collapsed bg-highlight" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false" style="width: 100%;">
+                    <span class="d-flex align-items-center gap-4">
+
+                        <img src="./assets/icons/home.svg"> Home
+                    </span>
+                </button>
+
+            </li>
+            <li class="mb-1 sidebar-li">
+
+                <a href="" class="d-flex align-items-center gap-4 btn align-items-center collapsed">
+
+                    <img src="./assets/icons/notifications.svg"> Notifications
+                </a>
+            </li>
+            <li class="mb-1 sidebar-li">
+
+                <a href="" class="d-flex align-items-center gap-4 btn align-items-center collapsed">
+
+
+                    <img src="./assets/icons/goals.svg"> Goals
+
+                </a>
+            </li>
+            <li class="mb-1 sidebar-li">
+
+                <a href="" class="d-flex align-items-center gap-4 btn align-items-center collapsed">
+
+                    <img src="./assets/icons/timesheet.svg"> Timesheet
+                </a>
+            </li>
+            <li class="mb-1 sidebar-li">
+
+                <a href="" class="d-flex align-items-center gap-4 btn align-items-center collapsed">
+
+                    <img src="./assets/icons/reports.svg"> Report
+                </a>
+            </li>
+
+            <li class="mb-1 sidebar-li">
+                <button class="btn btn-toggle align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#favourites-collapse" aria-expanded="false">
+                    <span class="d-flex align-items-center gap-4">
+
+                        <img src="./assets/icons/favourites.svg"> Favourites
+                    </span>
+                </button>
+                <div class="collapse" id="favourites-collapse" style="">
+                    <ul class="btn-toggle-nav list fw-normal pb-1 small favourites-list">
+
+                        <li><a href="#" class="link-dark">Development</a></li>
+                        <li><a href="#" class="link-dark">QA and Testing</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mb-1 sidebar-li">
+                <button class="btn btn-toggle align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#workspaces-collapse" aria-expanded="false">
+                    <span class="d-flex align-items-center gap-4">
+
+                        <img src="./assets/icons/home.svg"> Workspaces
+                    </span>
+                </button>
+                <div class="collapse" id="workspaces-collapse" style="">
+                    <button class="btn btn-light rounded">+ New Workspace</button>
+                    <ul class="btn-toggle-nav list fw-normal pb-1 small ">
+
+                        <li><a href="#" class="link-dark">Development</a></li>
+                        <li><a href="#" class="link-dark">Finance</a></li>
+                        <li><a href="#" class="link-dark">Marketing</a></li>
+                        <li><a href="#" class="link-dark">QA and Testing</a></li>
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+
+
+    <main>
+        <header>
+            <div class="d-flex gap-3 align-items-center">
+                <div class="icon">H</div>
+                <h2>Human Resources</h2>
+            </div>
+            <div class="icon">{u}</div>
+        </header>
+
+        <div id="content">
+
+            <!-- Main content -->
+            <!-- Remove card divs and add your content here -->
+            <!--div class="card"></!-div>
+    <div class="card"></div>
+
+    <!-- Main content end -->
+            <!-- Button trigger modal -->
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                To Do
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col" id="right">
+                                        <button type="button" class="btn-timesheet">
+                                            <img src="./assets/icons/date.svg" alt="">
+                                            15/09/2022
+                                        </button>
+                                        <button type="button" class="btn-timesheet">
+                                            <img src="./assets/icons/timesheet2.svg" alt="">
+                                            Timesheet
+                                        </button>
+                                        <button type="button" class="btn-watcher">
+                                            <img src="./assets/icons/watcher.svg" alt="">
+                                            Watcher
+                                        </button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div id="title">Design Company Policies Poster</div>
+                                        <br />
+                                        <div class="descriptor" id="descriptor">
+
+                                            This poster will be added to our internal company website.
+                                            Additionally, it will be printed and place around the company's wall
+                                        </div>
+
+                                        <div class="title2">SubTasks</div>
+                                        <div class="descriptor" id="sub">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                        Design Poster
+                                                    </div>
+                                                    <button type="button" class="btn-trashcan">
+                                                        <img src="./assets/icons/trashcan.svg" alt="">
+                                                    </button>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                        Request for approval
+                                                    </div>
+                                                    <button type="button" class="btn-trashcan">
+                                                        <img src="./assets/icons/trashcan.svg" alt="">
+                                                    </button>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                        Update company site
+                                                    </div>
+                                                    <button type="button" class="btn-trashcan">
+                                                        <img src="./assets/icons/trashcan.svg" alt="">
+                                                    </button>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <button type="button" class="btn-trashcan">
+                                                            + Add Subtask
+                                                        </button>
+                                                    </div>
+                                                </li>
+
+
+                                            </ul>
+                                        </div>
+
+                                        <div class="title2">Attachments</div>
+                                        <div class="descriptor" id="attach">
+                                            <form action="">
+                                                <input type="file" id="myfile" name="myfile" multiple>
+                                                <input type="submit">
+
+                                            </form>
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-primary " id="save-btn">Save</button>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="descriptor " id="view">
+                                            <ul>
+                                                <li>User A created this task</li>
+                                            </ul>
+                                        </div>
+                                        <div>Comments</div>
+                                        <div class="descriptor" id="comment">
+                                            <div>
+                                                <button type="button" class="btn btn-secondary"  id="comment-btn">Comment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                           
+
+
+
+                        </div>
+                        <!--
+     <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+    -->
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+            <footer>
+                <div class="logo-container">
+                    <img src="./assets/icons/logo.svg" alt="">
+
+                </div>
+            </footer>
+        </main>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+    </html>

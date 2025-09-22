@@ -1,0 +1,37 @@
+﻿.parent-element {
+    border: 1px solid #D9D9D9;
+}
+
+.form-group label {
+    color: var(--primary-color);
+    font-Weight: 600;
+}
+
+form .form-control {
+    border: none;
+    border-radius: 0;
+    padding-left: 0;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.profile-link a {
+    color: #5A5A5A;
+}
+
+/* profile pic */
+.profile-pic {
+    width: 15vh;
+    height: 15vh;
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.save-button {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

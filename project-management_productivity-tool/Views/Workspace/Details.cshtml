@@ -1,0 +1,503 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Details";
+}
+@section detail{
+    <link rel="stylesheet" href="~/css/board.css" />
+    <link rel="stylesheet" href="~/css/dragula.css"/>
+    <link rel="stylesheet" href="~/css/dragula.min.css" />
+    <link rel="stylesheet" href="~/css/list.css" />
+    <link rel="stylesheet" href="~/css/projecttimesheet.css" />
+    @*<link rel="stylesheet" href="~/lib/frappe-gantt/" />*@
+    <link rel="stylesheet" href="~/css/gantt.css" />
+    <link href="~/dist/frappe-gantt.css"/>
+    <script src="~/dist/frappe-gantt.js"></script>
+    <script src="~/dist/frappe-gantt.min.js"></script>
+
+    <script src="~/js/board.js"></script>
+    <script src="~/js/dragula.js"></script>
+    <script src="~/js/dragula.min.js"></script>
+    <script scr="~/js/jquery-3.6.1.min.js"></script>
+}
+
+
+<div id="task-header" class="w-full py-2 d-flex justify-content-between">
+    <div class="d-flex gap-4 align-items-center">
+        <h3>Company Policies</h3>
+        <ul class="nav nav-pills gap-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-list" aria-selected="true"> <img src="~/assets/icons/list.svg" alt=""> <span>List</span></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-board-tab" data-bs-toggle="pill" data-bs-target="#pills-board" type="button" role="tab" aria-controls="pills-board" aria-selected="false"> <img src="~/assets/icons/board.svg" alt=""> <span>Board</span></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-calendar-tab" data-bs-toggle="pill" data-bs-target="#pills-calendar" type="button" role="tab" aria-controls="pills-calendar" aria-selected="false"> <img src="~/assets/icons/calendar.svg" alt=""> <span>Calendar</span></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-gantt-tab" data-bs-toggle="pill" data-bs-target="#pills-gantt" type="button" role="tab" aria-controls="pills-gantt" aria-selected="false" onclick="" > <img src="~/assets/icons/gantt.svg" alt=""> <span>Gantt</span></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-timesheet-tab" data-bs-toggle="pill" data-bs-target="#pills-timesheet" type="button" role="tab" aria-controls="pills-timesheet" aria-selected="false"> <img src="~/assets/icons/timesheet2.svg" alt=""> <span>Timesheet</span></button>
+                @*temporary*@
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="add-view">+ Add View</button>
+            </li>
+        </ul>
+    </div>
+    <div class="d-flex align-items-center">
+        <ul class="nav">
+            <li class="nav-item border-0">
+                <button class="nav-link border-0 p-2 text-primary"><img src="~/assets/icons/group_by.svg" alt=""> Group By: Status</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link border-0 p-2"> <img src="~/assets/icons/filter.svg" alt=""> Filter</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link border-0 p-2"> <img src="~/assets/icons/my_task.svg" alt=""> My Task</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link border-0 p-2"> <img src="~/assets/icons/share.svg" alt=""> Share</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-list" role="tabpanel" aria-labelledby="pills-list-tab">
+            <div id="maincontent">
+
+                <div id="content1">
+                    <div class="column-1">
+                        <button class="button-add-task" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2"
+                            aria-expanded="false" aria-controls="multiCollapseExample2">
+                            + Task
+                        </button>
+                        <div class="search-container">
+                            <form class="nosubmit" action="">
+                                <input class="nosubmit" type="text" placeholder="Search Task" name="search" />
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    To Do
+                                </button>
+                                <div class="accordion-task">0 Tasks</div>
+                            </div>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                             aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    No Task Under This Section
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseTwo">
+                                    Pending
+                                </button>
+                                <div class="accordion-task">0 Tasks</div>
+                            </div>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                             aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    No Task Under This Section
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseThree">
+                                    Completed
+                                </button>
+                                <div class="accordion-task">0 Tasks</div>
+                            </div>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                             aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    No Task Under This Section
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="btn-group" id="card-dropdown">
+                                <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    To Do
+                                </button>
+                                <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">To Do</a></li>
+                                    <li><a class="dropdown-item" href="#">Pending</a></li>
+                                    <li><a class="dropdown-item" href="#">Completed</a></li>
+                                </ul>
+                            </div>
+                            <div class="card-date">
+                                <img src="~/assets/icons/calendar.svg">
+                                15/0/2022
+                            </div>
+                            <div>
+                                <img src="~/assets/icons/assigned.svg">
+                                <img src="~/assets/icons/Ellipse.svg">
+                            </div>
+                            <button class="card-close" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2"
+                                aria-expanded="false" aria-controls="multiCollapseExample2">
+                                X
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title" id="card-inputTaskName">Input Task Name...</div>
+                            <p class="card-text" id="card-description">Description</p>
+                            <div class="card-title" id="card-subtasks">SubTasks</div>
+                            <div class="card-text" id="card-subtask-tasks">
+                                <div id="card-subtask-tasks-row">
+                                    <div>Design Poster</div>
+                                    <img src="~/assets/icons/delete.svg">
+                                </div>
+                                <div id="card-subtask-tasks-row">
+                                    <div>Request for approval</div>
+                                    <img src="~/assets/icons/delete.svg">
+                                </div>
+                                <div id="card-subtask-tasks-row-add">
+                                    + Add SubTask
+                                </div>
+                            </div>
+                            <div class="card-title" id="card-attachments">Attachments</div>
+                            <div class="card-text" id="card-attachments-dragdrop">
+                                <img src="~/assets/icons/attachments.svg">
+                                <img src="~/assets/icons/attachments.svg">
+                            </div>
+                            <div class="card-title" id="card-comments">Comments</div>
+                            <p class="card-text" id="card-writecomment">Write a comment</p>
+                            <div class="card-createtask">
+                                <button class="card-createtaskbutton">Create Task</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+    <div class="tab-pane fade" id="pills-board" role="tabpanel" aria-labelledby="pills-board-tab">
+            <div class="search-container">
+                <form class="nosubmit" action="">
+                    <input class="nosubmit" type="text" placeholder="Search Task" name="search" />
+                </form>
+            </div>
+
+            <div class="kanban-container">
+                <div class="kanban-col overflow-auto" id="todocol" ondrop="drop_handler(event)"
+                 ondragover="dragover_handler(event)">
+                    <div class="kanban-header" id="todo" draggable="false">
+                        To Do (1)
+                    </div>
+                    <button type="button" class="btn taskbutton" draggable="false" data-bs-toggle="modal"
+                        data-bs-target="#taskModal">
+                        +
+                        Task
+                    </button>
+
+                    <div class="kanban-content" id="todocontent">
+                    </div>
+
+                </div>
+                <div class="kanban-col overflow-auto" id="pendingcol" draggable="false" ondrop="drop_handler(event)"
+                 ondragover="dragover_handler(event)">
+                    <div class="kanban-header" id="pending">
+                        Pending (0)
+                    </div>
+                    <button type="button" class="btn taskbutton" draggable="false" data-bs-toggle="modal"
+                        data-bs-target="#taskModal2">
+                        +
+                        Task
+                    </button>
+                <div class="kanban-content" id="pendingcontent">
+                </div>
+                </div>
+                <div class="kanban-col overflow-auto" id="completedcol" draggable="false" ondrop="drop_handler(event)"
+                 ondragover="dragover_handler(event)">
+                    <div class="kanban-header" id="completed" draggable="false">
+                        Completed (0)
+                    </div>
+                <div class="kanban-content" id="completedcontent">
+                </div>
+                </div>
+            </div>
+
+                      <!-- Modal 1-->
+          <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id=task-name placeholder="Input Task Name">
+                    </div>
+                    <div class="mb-3">
+                      <textarea class="form-control" id="description-text" placeholder="Description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="due-date" class="col-form-label">Due Date</label>
+                      <input type="date" id="due" name="due-date">
+                    </div>
+                    <div class="mb-3">
+                      <label for="members" class="col-form-label">Members</label>
+                      <select id="members" class="members">
+                        <option value="me">Me</option>
+                        <option value="you">You</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <button type="button" id="create-task-button" class="btn btn-primary" data-bs-dismiss="modal">Save
+                        changes</button>
+                      <!-- <input type="submit" value="submit" id="savechanges" data-bs-dismiss="modal"> -->
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal 2 -->
+          <div class="modal fade" id="taskModal2" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="task-name-2" placeholder="Input Task Name">
+                    </div>
+                    <div class="mb-3">
+                      <textarea class="form-control" id="description-text-2" placeholder="Description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="due-2" class="col-form-label">Due Date</label>
+                      <input type="date" id="due-2" name="due-date">
+                    </div>
+                    <div class="mb-3">
+                      <label for="members-2" class="col-form-label">Members</label>
+                      <select id="members-2" class="members">
+                        <option value="me">Me</option>
+                        <option value="you">You</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <button type="button" id="create-task-button-2" class="btn btn-primary"
+                        data-bs-dismiss="modal">Save
+                        changes</button>
+                      <!-- <input type="submit" value="submit" id="savechanges" data-bs-dismiss="modal"> -->
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
+    <div class="tab-pane fade" id="pills-calendar" role="tabpanel" aria-labelledby="pills-calendar-tab">Calendar</div>
+    <div class="tab-pane fade" id="pills-gantt" role="tabpanel" aria-labelledby="pills-gantt-tab">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="container">
+                        <div class="input-group rounded">
+                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            <span class="input-group-text border-0" id="search-addon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="container" id="task-ctn">
+                        <div id="task-title">
+                            <div>
+                                Task
+
+                            </div>
+                            <button id="task-btn">+</button>
+                        </div>
+                        <div class="container" id="pending">
+                            Pending
+                        </div>
+                        <div id="pending-list">
+                            <ul>
+                                <li>
+                                    New staff orientation
+                                    <br />
+                                    12 Sept-13 Sept
+
+                                </li>
+
+                                <li>
+                                    Application Training
+                                    <br />
+                                    14 Sept-23 Sept
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                        <div class="container" id="completed">
+                            Completed
+                        </div>
+                        <div id="completed-list">
+                            <ul>
+                                <li>
+                                    Orientation guide
+                                    <br />
+                                    1 Sept
+
+                                </li>
+
+
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-9">
+                    <div class="container">
+
+
+                        <div class="gantt-target"></div>
+                        
+                    </div>
+                </div>
+                <script src="~/js/gantt/gantt.js"></script>
+                
+            </div>
+
+        </div>
+        
+    </div>
+        <div class="tab-pane fade" id="pills-timesheet" role="tabpanel" aria-labelledby="pills-timesheet-tab">
+            <div class="grid text-center">
+                <div class="g-col gridheader">
+                    No
+                </div>
+                <div class="g-col gridheader">
+                    Task
+                </div>
+                <div class="g-col gridheader">
+                    Member
+                </div>
+                <div class="g-col gridheader">
+                    Start Date
+                </div>
+                <div class="g-col gridheader">
+                    End Date
+                </div>
+                <div class="g-col gridheader">
+                    Hours
+                </div>
+                <div class="g-col gridheader">
+                    Remarks
+                </div>
+
+
+                <div class="g-col fontstyle1">
+                    1
+                </div>
+                <div class="g-col fontstyle1">
+                    Orientation Guide
+                </div>
+                <div class="d-flex flex-row justify-content-center align-items-center g-col fontstyle1">
+                    <div class="smallicon fontsize12">UA</div>
+                    <div>User A</div>
+                </div>
+                <div class="g-col fontstyle1">
+                    <div class="date">
+                        01/09/2022
+                    </div>
+                    <div class="time">
+                        10:00 am
+                    </div>
+                </div>
+                <div class="g-col fontstyle1">
+                    <div class="date">
+                        01/09/2022
+                    </div>
+                    <div class="time">
+                        12:00 pm
+                    </div>
+                </div>
+                <div class="g-col fontstyle1">
+                    2
+                </div>
+                <div class="g-col fontstyle1">
+                    Added some more details to the guide
+                </div>
+
+
+                <div class="g-col fontstyle1">
+                    2
+                </div>
+                <div class="g-col fontstyle1">
+                    New Staff Orientation
+                </div>
+                <div class="d-flex flex-row justify-content-center align-items-center g-col fontstyle1">
+                    <div class="smallicon fontsize12">UB</div>
+                    <div>User B</div>
+                </div>
+                <div class="g-col fontstyle1">
+                    <div class="date">
+                        13/09/2022
+                    </div>
+                    <div class="time">
+                        11:00 am
+                    </div>
+                </div>
+                <div class="g-col fontstyle1">
+                    <div class="date">
+                        13/09/2022
+                    </div>
+                    <div class="time">
+                        01:00 pm
+                    </div>
+                </div>
+                <div class="g-col fontstyle1">
+                    2
+                </div>
+                <div class="g-col fontstyle1">
+                    -
+                </div>
+            </div>
+        </div>
+</div>

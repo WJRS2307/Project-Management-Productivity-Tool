@@ -1,0 +1,184 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<link href="~/css/workspace.css" rel="stylesheet" />
+
+<div class="row maincontent">
+    <ul class="list-group col-sm item">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <div class="fontsize17 fontweight600">Projects</div>
+            </div>
+            <input class="form-control mr-sm-2 searchinput" type="search">
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="listtext fontweight600 fontsize13">Recruitment</div>
+            <div class="float-end"><img src="../assets/icons/dotdotdot.svg"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="listtext fontweight600 fontsize13">Training and Development</div>
+            <div class="float-end"><img src="../assets/icons/dotdotdot.svg"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="listtext fontweight600 fontsize13">Compensation and Benefits</div>
+            <div class="float-end"><img src="../assets/icons/dotdotdot.svg"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="listtext fontweight600 fontsize13">Disciplinary</div>
+            <div class="float-end"><img src="../assets/icons/dotdotdot.svg"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <button type="button" class="btn btn-primary rounded-3 mb-3 workspacebtn fontweight600 fontsize12" data-bs-toggle="modal" data-bs-target="#addProjectModal">+ Add Project</button>
+
+            </div>
+        </li>
+    </ul>
+
+    <ul class="list-group col-sm item">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <div class="listtitle">Members</div>
+            </div>
+            <input class="form-control mr-sm-2 searchinput" type="search">
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="smallicon fontweight600 fontsize12">UA</div>
+                <div class="listtext fontweight600 fontsize13">User A ( userA@gmail.com )</div>
+            </div>
+            <div class="float-end"><img src="../assets/icons/dotdotdot.svg"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="smallicon fontweight600 fontsize12">UB</div>
+                <div class="listtext fontweight600 fontsize13">User B ( userB@gmail.com )</div>
+            </div>
+            <div class="float-end"><img src="../assets/icons/dotdotdot.svg"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="smallicon fontweight600 fontsize12">UC</div>
+                <div class="listtext fontweight600 fontsize13">User C ( userC@gmail.com )</div>
+            </div>
+            <div class="float-end"><img src="../assets/icons/dotdotdot.svg"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="smallicon fontweight600 fontsize12">UD</div>
+                <div class="listtext fontweight600 fontsize13">User D ( userD@gmail.com )</div>
+            </div>
+            <div class="float-end"><img src="../assets/icons/dotdotdot.svg"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <button type="button" class="btn btn-primary rounded-3 mb-3 workspacebtn fontweight600 fontsize12" data-bs-toggle="modal" data-bs-target="#addMemberModal">+ Add Member</button>
+            </div>
+        </li>
+    </ul>
+</div>
+
+@*modals*@
+
+<div class="modal fade" id="addProjectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body p-4">
+                <h5 class="modal-title mb-3" id="addProjectModalLabel">Add New Project</h5>
+                <form action="" method="post">
+                    <div>
+                        <label for="" class="form-label">Project Name</label>
+                        <input class="form-control border border-2 border-primary" type="text" name="projectName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Default Template</label>
+                        <select class="form-select border border-2 border-primary">
+                            <option selected>List</option>
+                            <option>Board</option>
+                            <option>Calendar</option>
+                            <option>Gantt</option>
+                            <option>Timesheet</option>
+                        </select>
+                        <div class="mb-3">
+                            <label for="" class="form-label">
+                                Project status
+                            </label>
+                            <div class="checker"><span class=""><input type="radio" name="statusorigin"><label for="" class="form-label">Inherit from workspace</label></span></div>
+                            <div class="checker"><span class=""><input type="radio" name="statusorigin"><label for="" class="form-label">Custom Status</label></span></div>
+                            <div class="mb-3" id="customStatusModal">
+                                <p class="form-label">Active Statuses</p>
+                                <div class="active-statuses">
+                                    <div class="status mb-2 p-1 d-flex gap-2 border border-2 border-primary align-items-center rounded-3">
+                                        <div class="marker"></div>
+                                        <p class="m-0">To Do</p>
+                                    </div>
+                                    <div class="status mb-2 p-1 d-flex gap-2 border border-2 border-primary align-items-center rounded-3">
+                                        <div class="marker" style="background-color: #FD7A7A;"></div>
+                                        <p class="m-0">Pending</p>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary rounded-3 mb-3">+ Add Status</button>
+                                <p class="form-label">Closed Status</p>
+                                <div class="status mb-2 p-1 d-flex gap-2 border border-2 border-primary align-items-center rounded-3">
+                                    <div class="marker" style="background-color: #4BBC5D;"></div>
+                                    <p class="m-0">Completed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary d-block mx-auto px-5 rounded">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addMemberModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body p-4">
+                <h5 class="modal-title mb-3" id="addMemberModalLabel">Add New Members</h5>
+                <form action="" method="post">
+                    <div>
+                        <label for="" class="form-label">Members</label>
+                        <select data-placeholder="Select members..." class="chosen-select" multiple="" tabindex="-1" style="display:none">
+                            <option value=""></option>
+                            <option value="User E">User E</option>
+                            <option value="User F">User F</option>
+                            <option value="User G">User G</option>
+                            <option value="User H">User H</option>
+                        </select>
+
+                    </div>
+                    <button type="button" class="btn btn-primary d-block mt-3 mx-auto px-5 rounded">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(".chosen-select").chosen({
+                width: "100%"
+            });
+
+            $(".chosen-container-multi .chosen-choices").css({
+                "border": "1px solid var(--primary-color)",
+                "border-radius": "7px",
+                "box-shadow": "none",
+                "background": 'url("/assets/icons/arrowblue.svg") no-repeat 0px 2px)'
+            });
+
+            $(".chosen-container-multi ul.chosen-choices li.search-choice").css({
+                "background-color": "white",
+                "border": "1px solid var(--primary-color)",
+                "border-radius": "7px"
+            });
+        });
+    </script>
+}

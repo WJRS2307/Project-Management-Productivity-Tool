@@ -1,0 +1,320 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Goals";
+}
+
+@section goal{
+    <link rel="stylesheet" href="~/css/goals.css" />
+}
+
+    
+
+        <!-- Main content -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-white">
+                        <div class="card-body">
+                            <div class="flex-container">
+                                <div class="flex-title">
+                                    <div class="title">My Goals</div>
+                                    <button class="add" data-bs-toggle="modal" data-bs-target="#myModal">+</button>
+                                </div>
+                                <ul class="navigation">
+                                    <li role="presentation" class="nav-item all-task ">
+                                        <a href="#"
+                                       class="nav-link">All</a>
+                                    </li>
+                                    <li role="presentation" class="nav-item ongoing-task">
+                                        <a href="#"
+                                       class="nav-link">Ongoing</a>
+                                    </li>
+                                    <li role="presentation" class="nav-item overdue-task">
+                                        <a href="#"
+                                       class="nav-link">Overdue</a>
+                                    </li>
+                                    <li role="presentation" class="nav-item archived-task">
+                                        <a href="#"
+                                       class="nav-link">Archived</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="todo-list">
+                                <div class="todo-item">
+                                    <div class="todo-item-task">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <ul class="task">
+                                            <li>Get 10 new users for the system</li>
+                                            <li>
+                                                <table class="table-blue">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Start Date:</th>
+                                                            <th>Due Date:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>30/09/2022</td>
+                                                            <td>30/09/2022</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="task-side">
+                                        <li class="task-side-date-blue">08/09/2022</li>
+                                        <li class="float-end"><img src="./assets/icons/dotdotdot.svg"></li>
+                                        <li class="li-space">.</li>
+                                        <li class="li-space">.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="todo-item">
+                                    <div class="todo-item-task">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <ul class="task">
+                                            <li>Resolve 3 bugs this week</li>
+                                            <li>
+                                                <table class="table-blue">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Start Date:</th>
+                                                            <th>Due Date:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>30/09/2022</td>
+                                                            <td>30/09/2022</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="task-side">
+                                        <li class="task-side-date-blue">07/09/2022</li>
+                                        <li class="float-end"><img src="./assets/icons/dotdotdot.svg"></li>
+                                        <li class="li-space">.</li>
+                                        <li class="li-space">.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="todo-item">
+                                    <div class="todo-item-task">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <ul class="task">
+                                            <li>Contact customers about their request</li>
+                                            <li>
+                                                <table class="table-green">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Start Date:</th>
+                                                            <th>Due Date:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>30/09/2022</td>
+                                                            <td>30/09/2022</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="task-side">
+                                        <li class="task-side-date-green">06/09/2022</li>
+                                        <li class="float-end"><img src="./assets/icons/dotdotdot.svg"></li>
+                                        <li class="li-space">.</li>
+                                        <li class="li-space">.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="todo-item">
+                                    <div class="todo-item-task">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <ul class="task">
+                                            <li>Submit bug report</li>
+                                            <li>
+                                                <table class="table-red">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Start Date:</th>
+                                                            <th>Due Date:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>30/09/2022</td>
+                                                            <td>30/09/2022</td>
+                                                        </tr>
+
+                                                </table>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="task-side">
+                                        <li class="task-side-date-red">04/09/2022</li>
+                                        <li class="float-end"><img src="./assets/icons/dotdotdot.svg"></li>
+                                        <li class="li-space">.</li>
+                                        <li class="li-space">.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-white">
+                        <div class="card-body">
+                            <div class="flex-container">
+                                <div class="flex-title">
+                                    <div class="title">Team Goals</div>
+                                    <button class="add" data-bs-toggle="modal" data-bs-target="#myModal2">+</button>
+                                </div>
+                                <ul class="navigation">
+                                    <li class="nav-item all-task "><a href="#" class="nav-link">All</a></li>
+                                    <li class="nav-item ongoing-task"><a href="#" class="nav-link">Ongoing</a></li>
+                                    <li class="nav-item overdue-task"><a href="#" class="nav-link">Overdue</a></li>
+                                    <li class="nav-item archived-task">
+                                        <a href="#" class="nav-link">Archived</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="todo-list-team">
+                                <div class="todo-item-team">
+                                    <div class="todo-item-task">
+                                        <div class="checker"><span class=""><input type="checkbox"></span></div>
+                                        <ul class="task">
+                                            <li>Get 10 new users for the system</li>
+                                            <li>
+                                                <table class="table-red">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Start Date:</th>
+                                                            <th>Due Date:</th>
+                                                            <th>Collaborators</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>30/09/2022</td>
+                                                            <td>30/09/2022</td>
+                                                            <td>
+                                                                <svg width="25" height="25" viewBox="0 0 25 25"
+                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <circle cx="12.5" cy="12.5" r="12.5"
+                                                                        fill="#EE0000" />
+                                                                </svg>
+                                                                <svg width="25" height="25" viewBox="0 0 25 25"
+                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <circle cx="12.5" cy="12.5" r="12.5"
+                                                                        fill="#EE0000" />
+                                                                </svg>
+                                                                <svg width="25" height="25" viewBox="0 0 25 25"
+                                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <circle cx="12.5" cy="12.5" r="12.5"
+                                                                        fill="#EE0000" />
+                                                                </svg>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="task-side">
+                                        <li class="task-side-date-red">01/08/2022</li>
+                                        <li class="float-end"><img src="./assets/icons/dotdotdot.svg"></li>
+                                        <li class="li-space">.</li>
+                                        <li class="li-space">.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">My New Goal</h4>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"></button> -->
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="modal-body-body">
+                            <label for="goal">Goal</label>
+                            <input type="text" id="goal" name="goal">
+                            <label for="sdate">Start Date:</label>
+                            <input type="date" id="sdate" name="sdate">
+                            <label for="ddate">Due Date:</label>
+                            <input type="date" id="ddate" name="ddate">
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal2">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Team's Goal</h4>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"></button> -->
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="modal-body-body">
+                            <label for="goal">Goal</label>
+                            <input type="text" id="goal" name="goal">
+                            <label for="sdate">Start Date:</label>
+                            <input type="date" id="sdate" name="sdate">
+                            <label for="ddate">Due Date:</label>
+                            <input type="date" id="ddate" name="ddate">
+                            <label for="collaborators">Collaborators</label>
+                            <input type="text" id="collaborators" name="collaborators">
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn2" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn" data-bs-dismiss="modal">Save</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+   

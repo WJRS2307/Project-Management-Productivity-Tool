@@ -1,0 +1,251 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Reports";
+
+}
+@section report{
+    <link rel="stylesheet" href="~/css/report.css" />
+}
+
+    <div id="content">
+
+        <!-- Main content -->
+        <!-- Remove card divs and add your content here -->
+        <h2>Workspace Report</h2>
+
+        <div class="box">
+            <div class="box-child">
+                <div class="center">
+                    <button class="button-workspace-1" data-bs-toggle="modal" data-bs-target="#myModal">Workspace Overview</button>
+                </div>
+            </div>
+            <div class="box-child">
+                <div class="center">
+                    <button class="button-workspace-2" data-bs-toggle="modal" data-bs-target="#myModal2">Workspace Project Tasks</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Timesheet Report</h2>
+
+        <div class="box">
+            <div class="box-child">
+                <div class="center">
+                    <button class="button-timesheet-1" data-bs-toggle="modal" data-bs-target="#myModal3">Timesheet by Member</button>
+                </div>
+            </div>
+            <div class="box-child">
+                <div class="center">
+                    <button class="button-timesheet-2" data-bs-toggle="modal" data-bs-target="#myModal4">Timesheet by Workspace</button>
+                </div>
+            </div>
+            <div class="box-child">
+                <div class="center">
+                    <button class="button-timesheet-2" data-bs-toggle="modal" data-bs-target="#myModal5">Timesheet by Project</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal content -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Workspace Overview Report</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Workspaces
+                        <div class="selectdiv">
+                            <label>
+                                <select>
+                                    <option selected> Select Box </option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Last long option</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Export</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="myModal2">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Workspace Project Tasks Report</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Workspace
+                        <div class="selectdiv">
+                            <label>
+                                <select>
+                                    <option selected> Select Box </option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Last long option</option>
+                                </select>
+                            </label>
+                        </div>
+                        <br>
+                        Project
+                        <div class="selectdiv2">
+                            <label>
+                                <select>
+                                    <option selected> Select Box </option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Last long option</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Export</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="myModal3">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Timesheet by Member Report</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Workspace
+                        <div class="selectdiv">
+                            <label>
+                                <select>
+                                    <option selected> Select Box </option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Last long option</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Export</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="myModal4">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Timesheet by Workspace Report</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Workspace
+                        <div class="selectdiv">
+                            <label>
+                                <select>
+                                    <option selected> Select Box </option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Last long option</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Export</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="myModal5">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Timesheet by Project Report</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Workspace
+                        <div class="selectdiv">
+                            <label>
+                                <select>
+                                    <option selected> Select Box </option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Last long option</option>
+                                </select>
+                            </label>
+                        </div>
+                        <br>
+                        Project
+                        <div class="selectdiv2">
+                            <label>
+                                <select>
+                                    <option selected> Select Box </option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Last long option</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Export</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content end -->
+
+
+
+
+    </div>

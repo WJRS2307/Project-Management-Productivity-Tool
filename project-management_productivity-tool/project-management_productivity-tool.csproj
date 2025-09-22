@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>project_management_productivity_tool</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Workspace\gantt.cshtml" />
+    <Content Remove="Views\Workspace\task.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\img\" />
+    <Folder Include="wwwroot\assets\NewFolder\" />
+    <Folder Include="wwwroot\js\chosen\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Workspace\Gantt.cshtml" />
+    <None Include="Views\Workspace\task.cshtml" />
+    <None Include="wwwroot\dist\frappe-gantt.js" />
+    <None Include="wwwroot\dist\frappe-gantt.js.map" />
+    <None Include="wwwroot\dist\frappe-gantt.min.js" />
+    <None Include="wwwroot\dist\frappe-gantt.min.js.map" />
+    <None Include="wwwroot\lib\frappe-gantt\frappe-gantt.js" />
+    <None Include="wwwroot\lib\frappe-gantt\frappe-gantt.js.map" />
+    <None Include="wwwroot\lib\frappe-gantt\frappe-gantt.min.js" />
+    <None Include="wwwroot\lib\frappe-gantt\frappe-gantt.min.js.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

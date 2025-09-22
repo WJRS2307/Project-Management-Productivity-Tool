@@ -1,0 +1,94 @@
+﻿.maincontent {
+    margin: auto 6%;
+}
+
+.list-group {
+    margin: 3%;
+    min-width: 320px
+}
+
+.listtext {
+    color: var(--primary-color);
+}
+
+.searchinput {
+    width: 128px;
+    height: 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-image: url('../assets/icons/search.svg');
+    background-repeat: no-repeat;
+    background-position: 6px center;
+    padding: 0px 0px 0px 22px;
+}
+
+.smallicon {
+    background-color: var(--primary-color);
+    color: white;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    line-height: 0;
+    margin-right: 16px;
+}
+
+.list-group-item {
+    padding-left: 56px;
+    padding-right: 24px;
+}
+
+.workspacebtn {
+    width: 128px;
+    height: 30px;
+}
+
+.fontweight600 {
+    font-weight: 600;
+}
+
+.fontsize12 {
+    font-size: 12px;
+}
+
+.fontsize13 {
+    font-size: 13px;
+}
+
+.fontsize17 {
+    font-size: 17px;
+}
+
+#customStatusModal {
+    border-radius: 10px;
+    border: 2px solid var(--grey-color);
+    margin: 0 5%;
+    padding: 0 2%;
+}
+.chosen-select {
+    width: 100%;
+}
+
+/*.chosen-container-multi .chosen-container{
+    background: url("~/assets/icons/arrowblue.svg") no-repeat 0px 2px;
+}
+
+.chosen-container-multi ul.chosen-choices:after {
+    content: '';
+    background-image: url(chosen-sprite.png);
+    background-position-x: 0px;
+    background-position-y: 2px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.chosen-container-multi.chosen-with-drop ul.chosen-choices:after {
+    background-position-x: -18px;
+}*/

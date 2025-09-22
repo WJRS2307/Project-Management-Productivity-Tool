@@ -1,0 +1,308 @@
+﻿@*<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/constants.css">
+
+    <link rel="stylesheet" href="~/css/colors.css">
+
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/sidebar.css">
+
+    <link rel="stylesheet" href="~/lib/frappe-gantt/" />
+    <link rel="stylesheet" href="~/css/gantt.css" />
+
+    <script src="dist/frappe-gantt.js"></script>
+</head>
+<body>*@
+    
+        <input type="checkbox" name="" id="sidebar-toggle" style="display: none;">
+        <div id="sidebar" class="flex-shrink-0 p-0 bg-primary" >
+
+            <label id="sidebar-toggle-label" for="sidebar-toggle">
+              <img src="./assets/icons/arrow.svg">
+              <img src="./assets/icons/arrow.svg">
+            </label>
+            <label id="collapsed-toggle-label" for="sidebar-toggle"></label>
+
+            <ul class="list-unstyled ps-0">
+              <li class="mb-1 sidebar-li" >
+                <button class="btn align-items-center collapsed bg-highlight" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false" style="width: 100%;">
+                    <span class="d-flex align-items-center gap-4">
+
+                        <img src="./assets/icons/home.svg"> Home
+                    </span>
+                </button>
+               
+              </li>
+              <li class="mb-1 sidebar-li">
+                
+                    <a href="" class="d-flex align-items-center gap-4 btn align-items-center collapsed">
+
+                        <img src="./assets/icons/notifications.svg"> Notifications
+                    </a>
+              </li>
+              <li class="mb-1 sidebar-li">
+                
+                    <a href="" class="d-flex align-items-center gap-4 btn align-items-center collapsed">
+                        
+
+                        <img src="./assets/icons/goals.svg"> Goals
+                        
+                    </a>
+              </li>
+              <li class="mb-1 sidebar-li">
+                
+                    <a href="" class="d-flex align-items-center gap-4 btn align-items-center collapsed">
+
+                        <img src="./assets/icons/timesheet.svg"> Timesheet
+                    </a>
+              </li>
+              <li class="mb-1 sidebar-li">
+                
+                    <a href="" class="d-flex align-items-center gap-4 btn align-items-center collapsed">
+
+                        <img src="./assets/icons/reports.svg"> Report
+                    </a>
+              </li>
+
+              <li class="mb-1 sidebar-li">
+                <button class="btn btn-toggle align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#favourites-collapse" aria-expanded="false">
+                    <span class="d-flex align-items-center gap-4">
+
+                        <img src="./assets/icons/favourites.svg"> Favourites
+                    </span>
+                </button>
+                <div class="collapse" id="favourites-collapse" style="">
+                  <ul class="btn-toggle-nav list fw-normal pb-1 small favourites-list">
+
+                    <li><a href="#" class="link-dark">Development</a></li>
+                    <li><a href="#" class="link-dark">QA and Testing</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1 sidebar-li">
+                <button class="btn btn-toggle align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#workspaces-collapse" aria-expanded="false">
+                    <span class="d-flex align-items-center gap-4">
+
+                        <img src="./assets/icons/home.svg"> Workspaces
+                    </span>
+                </button>
+                <div class="collapse" id="workspaces-collapse" style="">
+                  <button class="btn btn-light rounded">+ New Workspace</button>
+                  <ul class="btn-toggle-nav list fw-normal pb-1 small ">
+
+                    <li><a href="#" class="link-dark">Development</a></li>
+                    <li><a href="#" class="link-dark">Finance</a></li>
+                    <li><a href="#" class="link-dark">Marketing</a></li>
+                    <li><a href="#" class="link-dark">QA and Testing</a></li>
+                  </ul>
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+        
+          
+
+        <main>
+            <header>
+                <div class="d-flex gap-3 align-items-center">
+                  <div class="home-icon">
+                    <img src="./assets/icons/home.svg" alt="">
+                  </div>
+                  <h2>Human Resources</h2>
+                </div>
+                <div class="icon">{u}</div>
+            </header>
+
+            <div id="content">
+               
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="container">
+                                <div class="input-group rounded">
+                                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                    <span class="input-group-text border-0" id="search-addon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <div class="container" id="task-ctn">
+                                <div id="task-title">
+                                    <div>
+                                        Task
+
+                                    </div>
+                                    <button id="task-btn">+</button>
+                                </div>
+                                <div class="container" id="pending">
+                                    Pending
+                                </div>
+                                <div id="pending-list">
+                                    <ul>
+                                        <li>
+                                            New staff orientation
+                                            <br />
+                                            12 Sept-13 Sept
+
+                                        </li>
+
+                                        <li>
+                                            Application Training
+                                            <br />
+                                            14 Sept-23 Sept
+
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+                                <div class="container" id="completed">
+                                    Completed
+                                </div>
+                                <div id="completed-list">
+                                    <ul>
+                                        <li>
+                                            Orientation guide
+                                            <br />
+                                            1 Sept
+
+                                        </li>
+
+                                      
+
+                                    </ul>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        <div class="col-9">
+                            <div class="container">
+
+
+                                <div class="gantt-target"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--
+
+       <div class="container">
+
+
+            <div class="gantt-target"></div>
+        </div>
+
+
+    -->
+
+                <script>
+                    var tasks = [
+                        {
+                            start: '2018-10-01',
+                            end: '2018-10-08',
+                            name: 'Redesign website',
+                            id: "Task 0",
+                            progress: 20
+                        },
+                        {
+                            start: '2018-10-03',
+                            end: '2018-10-06',
+                            name: 'Write new content',
+                            id: "Task 1",
+                            progress: 5,
+                            dependencies: 'Task 0'
+                        },
+                        {
+                            start: '2018-10-04',
+                            end: '2018-10-08',
+                            name: 'Apply new styles',
+                            id: "Task 2",
+                            progress: 10,
+                            dependencies: 'Task 1'
+                        },
+                        {
+                            start: '2018-10-08',
+                            end: '2018-10-09',
+                            name: 'Review',
+                            id: "Task 3",
+                            progress: 5,
+                            dependencies: 'Task 2'
+                        },
+                        {
+                            start: '2018-10-08',
+                            end: '2018-10-10',
+                            name: 'Deploy',
+                            id: "Task 4",
+                            progress: 0,
+                            dependencies: 'Task 2'
+                        },
+                        {
+                            start: '2018-10-11',
+                            end: '2018-10-11',
+                            name: 'Go Live!',
+                            id: "Task 5",
+                            progress: 0,
+                            dependencies: 'Task 4',
+                            custom_class: 'bar-milestone'
+                        },
+                        //{
+                        //	start: '2014-01-05',
+                        //	end: '2019-10-12',
+                        //	name: 'Long term task',
+                        //	id: "Task 6",
+                        //	progress: 0
+                        //}
+                    ]
+                    var gantt_chart = new Gantt(".gantt-target", tasks, {
+                        on_click: function (task) {
+                            console.log(task);
+                        },
+                        on_date_change: function (task, start, end) {
+                            console.log(task, start, end);
+                        },
+                        on_progress_change: function (task, progress) {
+                            console.log(task, progress);
+                        },
+                        on_view_change: function (mode) {
+                            console.log(mode);
+                        },
+                        view_mode: 'Week',
+                        language: 'en'
+                    });
+                    console.log(gantt_chart);
+                </script>
+
+
+
+
+
+
+
+            </div>
+
+            <footer>
+              <div class="logo-container">
+                <img src="./assets/icons/logo.svg" alt="">
+
+              </div>
+            </footer>
+        </main>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+@*</body>
+</html>*@

@@ -1,0 +1,31 @@
+#task-header .nav-link{
+    background-color: transparent;
+    color:unset;
+    position: relative;
+    border-left:3px solid var(--grey-color);
+    border-radius: 0;
+    padding:0;
+    padding-left:1rem;
+    color: var(--grey-color);
+    display: flex;
+    align-items: center;
+    gap:0.6em;
+}
+#task-header .nav-link::before{
+    content:'';
+    position: absolute;
+    width: 0em;
+    border-radius: 10px;
+    height: 3px;
+    background-color: var(--primary-color);
+    bottom:-0.5rem;
+    left:50%;
+    transform: translateX(-50%);
+    transition:all 0.3s;
+}
+#task-header .active::before{
+    width: 2em;
+
+}#task-header .nav-item{
+     border-left:2px solid lightgrey;
+ }

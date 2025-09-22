@@ -1,0 +1,25 @@
+﻿.box {
+    border: 1px solid var(--grey-color);
+}
+
+.row-1, .row-2, .row-3 {
+    border-right: 1px solid var(--grey-color);
+    ;
+}
+
+.row {
+    border-top: 1px solid var(--grey-color);
+}
+
+.row:first-child {
+    color: var(--primary-color);
+    border-top: none;
+}
+
+.ellipsis {
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}

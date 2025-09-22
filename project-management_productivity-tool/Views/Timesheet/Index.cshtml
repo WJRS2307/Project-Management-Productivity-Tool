@@ -1,0 +1,192 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Timesheet";
+}
+
+<link href="~/css/personaltimesheet.css" rel="stylesheet" />
+
+<div class="d-flex flex-row justify-content-start">
+    <h3 class="fontweight600 fontsize17 m-0">Personal Timesheet</h3>
+    <button id="addtimesheetbtn" data-bs-toggle="modal" data-bs-target="#addTimesheetModal">+</button>
+</div>
+<div class="d-flex justify-content-end">
+    <button id="filterbtn"><img src="/assets/icons/filter.svg">Filter</button>
+</div>
+<div class="grid text-center">
+    <div class="g-col gridheader">
+        No
+    </div>
+    <div class="g-col gridheader">
+        Task
+    </div>
+    <div class="g-col gridheader">
+        Start Date
+    </div>
+    <div class="g-col gridheader">
+        End Date
+    </div>
+    <div class="g-col gridheader">
+        Hours
+    </div>
+    <div class="g-col gridheader">
+        Remarks
+    </div>
+
+
+    <div class="g-col fontstyle1">
+        1
+    </div>
+    <div class="g-col task">
+        <div class="taskheader fontstyle1">
+            Orientation Guide
+        </div>
+        <div class="taskdetails fontstyle2">
+            Human Resources - Training and Development
+        </div>
+    </div>
+    <div class="g-col fontstyle1">
+        <div class="date">
+            01/09/2022
+        </div>
+        <div class="time">
+            10:00 am
+        </div>
+    </div>
+    <div class="g-col fontstyle1">
+        <div class="date">
+            01/09/2022
+        </div>
+        <div class="time">
+            12:00 pm
+        </div>
+    </div>
+    <div class="g-col fontstyle1">
+        2
+    </div>
+    <div class="g-col fontstyle1">
+        Added some more details to the guide
+    </div>
+
+
+    <div class="g-col fontstyle1">
+        2
+    </div>
+    <div class="g-col task">
+        <div class="taskheader fontstyle1">
+            Design Company Policies Poster
+        </div>
+        <div class="taskdetails fontstyle2">
+            Human Resources - Company Policies
+        </div>
+    </div>
+    <div class="g-col fontstyle1">
+        <div class="date">
+            01/09/2022
+        </div>
+        <div class="time">
+            12:00 pm
+        </div>
+    </div>
+    <div class="g-col fontstyle1">
+        <div class="date">
+            01/09/2022
+        </div>
+        <div class="time">
+            01:30 pm
+        </div>
+    </div>
+    <div class="g-col fontstyle1">
+        1.5
+    </div>
+    <div class="g-col fontstyle1">
+        -
+    </div>
+
+    <div class="g-col fontstyle1">
+        3
+    </div>
+    <div class="g-col task">
+        <div class="taskheader fontstyle1">
+            Design Company Policies Poster
+        </div>
+        <div class="taskdetails fontstyle2">
+            Human Resources - Company Policies
+        </div>
+    </div>
+    <div class="g-col fontstyle1">
+        <div class="date">
+            10/09/2022
+        </div>
+        <div class="time">
+            02:30 pm
+        </div>
+    </div>
+    <div class="g-col fontstyle1">
+        <div class="date">
+            10/09/2022
+        </div>
+        <div class="time">
+            06:00 pm
+        </div>
+    </div>
+    <div class="g-col fontstyle1">
+        3.5
+    </div>
+    <div class="g-col fontstyle1">
+        -
+    </div>
+</div>
+
+@*modal*@
+
+<div class="modal fade" id="addTimesheetModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close modalclosebtn" data-bs-dismiss="modal" aria-label="Close">X</button>
+                <div>
+                    <h5 class="modal-title mb-3 fontsize17 fontweight600" id="addTimesheetModalLabel">New Timesheet</h5>
+                    <form action="" method="post">
+                        <label for="" class="form-label">Workspace</label>
+                        <select class="form-select border border-2 border-primary" type="text" name="workspaceName">
+                            <option selected disabled hidden value=""></option>
+                            <option value="workspace1">workspace 1</option>
+                            <option value="workspace2">workspace 2</option>
+                            <option value="workspace3">workspace 3</option>
+                        </select>
+
+                        <label for="" class="form-label">Project</label>
+                        <select class="form-select border border-2 border-primary" type="text" name="projectName">
+                            <option selected disabled hidden value=""></option>
+                            <option value="project1">Project 1</option>
+                            <option value="project2">Project 2</option>
+                            <option value="project3">Project 3</option>
+                        </select>
+
+                        <label for="" class="form-label">Task</label>
+                        <select class="form-select border border-2 border-primary" type="text" name="taskName">
+                            <option selected disabled hidden value=""></option>
+                            <option value="task1">Task 1</option>
+                            <option value="task2">Task 2</option>
+                            <option value="task3">Task 3</option>
+                        </select>
+
+                        <label for="" class="form-label">Start</label>
+                        <input class="form-control border border-2 border-primary dateinput" type="text" name="StartTime">
+
+                        <label for="" class="form-label">End</label>
+                        <input class="form-control border border-2 border-primary dateinput" type="text" name="EndTime">
+
+                        <label for="" class="form-label">Remarks</label>
+                        <textarea class="form-control border border-2 border-primary" name="Remarks"></textarea>
+
+                        <span></span>
+                        <button type="button" id="modalsavebtn" class="btn btn-primary d-block mx-auto rounded fontsize13 border-0">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
